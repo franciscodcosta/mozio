@@ -3,6 +3,9 @@ from django.contrib.gis.geos import Point
 
 
 class Provider(gis_models.Model):
+    class Meta:
+        app_label = 'mozio_app'
+
     name = gis_models.CharField(max_length=100)
     email = gis_models.EmailField()
     phone_number = gis_models.CharField(max_length=20)
@@ -11,6 +14,9 @@ class Provider(gis_models.Model):
 
 
 class ServiceArea(gis_models.Model):
+    class Meta:
+        app_label = 'mozio_app'
+
     name = gis_models.CharField(max_length=100)
     price = gis_models.DecimalField(max_digits=10, decimal_places=2)
     area = gis_models.PolygonField()
